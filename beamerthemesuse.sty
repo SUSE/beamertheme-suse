@@ -1,0 +1,89 @@
+\mode<presentation>
+
+% packages
+\RequirePackage{tikz}
+\RequirePackage{fontspec}
+\RequirePackage{xcolor}
+\RequirePackage{textpos}
+
+% fonts
+\setmainfont{WorkSans-Regular}
+\setsansfont{WorkSans-Regular}
+\setmonofont{Consolas}
+
+% colors
+\definecolor{SUSEPine}{RGB}{12, 50, 44}
+\definecolor{SUSEJungle}{RGB}{48, 186, 20}
+\definecolor{SUSECoral}{RGB}{255, 106, 82}
+\definecolor{SUSEFog}{RGB}{242, 242, 242}
+
+\definecolor{SUSESeafoam}{RGB}{122, 212, 170}
+\definecolor{SUSESalmon}{RGB}{255, 142, 119}
+
+\setbeamercolor*{title page header}{fg=white}
+\setbeamercolor*{author}{fg=white}
+\setbeamercolor*{date}{fg=SUSESalmon}
+
+\setbeamercolor*{title}{fg=SUSEPine}
+\setbeamercolor{frametitle}{fg=SUSEPine}
+\setbeamercolor{structure}{fg=SUSEPine}
+
+\setbeamercolor{palette primary}{bg=white,fg=SUSEPine}
+\setbeamercolor{palette secondary}{bg=white,fg=SUSEJungle}
+\setbeamercolor{palette tertiary}{bg=white,fg=SUSECoral}
+\setbeamercolor{palette quaternary}{bg=white,fg=SUSEPine}
+\setbeamercolor{structure}{fg=SUSEJungle}
+\setbeamercolor{section in toc}{fg=SUSEPine}
+
+\setbeamercolor*{enumerate item}{fg=SUSEJungle}
+\setbeamercolor*{enumerate subitem}{fg=SUSEPine}
+\setbeamercolor*{enumerate subsubitem}{fg=SUSEFog}
+
+\setbeamerfont{section page}{size=\LARGE}
+\setbeamerfont{title}{size=\huge}
+\setbeamerfont{author}{size=\tiny}
+\setbeamerfont{date}{size=\tiny}
+
+\setbeamertemplate{background}{
+  \begin{tikzpicture}
+    \useasboundingbox (0,0) rectangle(\the\paperwidth,\the\paperheight);
+    \fill[color=SUSEPine] (0,0) rectangle (\the\paperwidth,\the\paperheight);
+    \node[anchor=south east,yshift=0.035\paperheight,xshift=-0.02755\paperwidth] (logo) at (current page.south east)
+    {\includegraphics[width=0.098\paperwidth]{logo.eps}};
+    % dot matrix
+    % TODO make it relocatable
+    \foreach \y in {0.5,0.75,1,1.25,1.50,1.75} 
+    \draw[dash pattern=on \pgflinewidth off 6pt, color=white] (0.258\paperwidth,\y) -- (0.854\paperwidth,\y);
+    % curved line
+    \draw[dash pattern=on \pgflinewidth off 1pt, color=SUSEFog,very thin,rounded corners] (0,0.923\paperheight) -| ++(0.1988\paperwidth,-0.602\paperheight) |- (\paperwidth, 0.321\paperheight);
+    \ifnum\thepage>1\relax%
+    \fill[white,opacity=1] (0,0) rectangle(\the\paperwidth,\the\paperheight);
+    \fi
+  \end{tikzpicture}
+}
+
+\setbeamertemplate{title page}{
+  \begin{beamercolorbox}[wd=\paperwidth,leftskip=0.2717\paperwidth,rightskip=0.141732\paperwidth,sep=1pt]{date}
+    \usebeamerfont{date}\usebeamercolor{date}\insertdate%
+  \end{beamercolorbox}
+  
+  \begin{beamercolorbox}[wd=\paperwidth,leftskip=0.2717\paperwidth,rightskip=0.141732\paperwidth]{title page header}
+    \usebeamerfont{title}\usebeamercolor{title}\inserttitle\par
+  \end{beamercolorbox}%
+  
+  \begin{beamercolorbox}[wd=\paperwidth,leftskip=0.2717\paperwidth,rightskip=0.141732\paperwidth]{author}
+    \usebeamerfont{author}\insertauthor%
+  \end{beamercolorbox}
+}
+
+\setbeamertemplate{footline}[text line]{%
+  \ifnum \theframenumber=1
+  \else
+  \parbox{\linewidth}{\vspace*{-0.10\paperheight}\insertpagenumber\hfill}
+  \fi
+}
+
+% removes navigation toolbar
+\setbeamertemplate{navigation symbols}{}
+
+\mode<all>
