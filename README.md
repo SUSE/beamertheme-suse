@@ -8,7 +8,7 @@ Presentation template for Beamer inspired in the [SUSE Brand](https://brand.suse
 # Why beamer?
 
 * Office suites tend to be a pain for programmers
-* It can be used from LaTeX, [org-mode](https://orgmode.org/), and [https://pandoc.org/]
+* It can be used from LaTeX, [org-mode](https://orgmode.org/), and [pandoc](https://pandoc.org/)
 
 # Note
 
