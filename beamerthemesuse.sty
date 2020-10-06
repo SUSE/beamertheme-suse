@@ -55,7 +55,14 @@
     \foreach \y in {0.5,0.75,1,1.25,1.50,1.75} 
     \draw[dash pattern=on \pgflinewidth off 6pt, color=white] (0.258\paperwidth,\y) -- (0.854\paperwidth,\y);
     % curved line
-    \draw[dash pattern=on \pgflinewidth off 1pt, color=SUSEFog,very thin,rounded corners] (0,0.923\paperheight) -| ++(0.1988\paperwidth,-0.602\paperheight) |- (\paperwidth, 0.321\paperheight);
+    %\draw[dash pattern=on \pgflinewidth off 1pt, color=SUSEFog,very thin,rounded corners] (0,0.923\paperheight) -| ++(0.1988\paperwidth,-0.602\paperheight) |- (\paperwidth, 0.321\paperheight);
+    \coordinate (A) at (0,0.923\paperheight);
+    \coordinate (B) at (0.1988\paperwidth, 0.682\paperheight);
+    \coordinate (C) at (\paperwidth, 0.321\paperheight);
+    \draw[dash pattern=on \pgflinewidth off 1pt, color=SUSEFog,ultra thin,rounded corners] (A) -| (B);
+    \draw[fill,color=SUSEJungle] (B) circle (3pt);
+    \draw[dash pattern=on \pgflinewidth off 1pt, color=SUSEFog,very thin,rounded corners] (B) |- (C);
+
     \ifnum\thepage>1\relax%
     \fill[white,opacity=1] (0,0) rectangle(\the\paperwidth,\the\paperheight);
     \fi
