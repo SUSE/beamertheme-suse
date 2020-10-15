@@ -1,5 +1,5 @@
 .PHONY: clean
-all: suse-example.pdf
+all: example.pdf
 
 %.pdf : %.tex
 	xelatex $<
