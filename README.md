@@ -21,7 +21,7 @@ If you have fixes to make it closer to the guidelines, send a PR.
 
 # Usage
 
-See [example](suse-example.tex).
+See [example](example.tex).
 
 # Author
 
