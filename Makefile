@@ -10,5 +10,5 @@ example-0.png: example.pdf
 	convert -density 300 example.pdf -resize 25% example.png
 
 clean:
-	rm -f *.snm *.out *.toc *.pdf *.aux *.log *.nav
+	rm -f *.snm *.out *.toc *.pdf *.aux *.log *.nav *.vrb
 
