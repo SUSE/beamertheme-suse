@@ -2,7 +2,7 @@
 all: example.pdf
 
 %.pdf : %.tex
-	xelatex $<
+	xelatex -interaction=nonstopmode $<
 
 screenshots: example-0.png example-1.png example-2.png
 
