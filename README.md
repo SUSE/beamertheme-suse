@@ -9,7 +9,7 @@ Presentation template for Beamer inspired in the [SUSE Brand](https://brand.suse
 
 ![Screenshot](example-2.png)
 
-([PDF example](example-pdf))
+([PDF example](example.pdf))
 
 # Why beamer?
 
