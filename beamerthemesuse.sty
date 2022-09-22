@@ -9,7 +9,7 @@
 % fonts
 \setmainfont{WorkSans-Light}[BoldFont=WorkSans-Medium, ItalicFont=WorkSans-LightItalic, BoldItalicFont=WorkSans-MediumItalic]
 \setsansfont{WorkSans-Light}[BoldFont=WorkSans-Medium, ItalicFont=WorkSans-LightItalic, BoldItalicFont=WorkSans-MediumItalic]
-\setmonofont{Source Code Pro:style=Light}
+\setmonofont{Liberation Mono}
 \setbeamerfont{title page}{family=\fontspec{WorkSans-Medium},size={\fontsize{32}{36}}}
 \setbeamerfont{subtitle page}{family=\fontspec{WorkSans-Light},size={\fontsize{18}{18}}}
 
@@ -95,12 +95,12 @@
   \ifnum \theframenumber=1
   \else
   \parbox{\linewidth}{
-    \vspace*{-0.10\paperheight}
     \insertpagenumber
     \hspace{3em}
     {\color{SUSEJungle}\rule{4em}{.6pt}}
     \hspace{2em}
-    Copyright \textcopyright\  SUSE 2020\hfill
+    Copyright \textcopyright\  SUSE \the\year\hfill
+    \vspace*{0.05\paperheight}
   }
   \fi
 }
