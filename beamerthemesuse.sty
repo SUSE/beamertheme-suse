@@ -44,6 +44,8 @@
 
 \setbeamerfont{section page}{size=\LARGE}
 \setbeamerfont{title}{size=\huge}
+\setbeamerfont{frametitle}{size=\Large,series=\bfseries}
+\setbeamerfont{framesubtitle}{size=\normalsize,series=\mdseries}
 \setbeamerfont{author}{size=\tiny}
 \setbeamerfont{date}{size=\tiny}
 
@@ -78,7 +80,7 @@
 
 \setbeamertemplate{title page}{
   \begin{beamercolorbox}[wd=\paperwidth,leftskip=0.2717\paperwidth,rightskip=0.141732\paperwidth,sep=1pt]{date}
-    \usebeamerfont{date}\usebeamercolor{date}\insertdate%
+    \usebeamerfont{date}\usebeamercolor{date}\MakeUppercase{\insertdate}%
   \end{beamercolorbox}
   
   \begin{beamercolorbox}[wd=\paperwidth,leftskip=0.2717\paperwidth,rightskip=0.141732\paperwidth]{title page header}
@@ -89,7 +91,7 @@
   \begin{beamercolorbox}[wd=\paperwidth,leftskip=0.2717\paperwidth,rightskip=0.141732\paperwidth]{author}
     \usebeamerfont{author}\insertauthor%
   \end{beamercolorbox}
-  \vskip0.4\paperheight%
+  \vskip0.3\paperheight%
 }
 
 \setbeamertemplate{footline}[text line]{
@@ -122,6 +124,8 @@
   }
   \fi
 }
+
+\setbeamertemplate{itemize items}{\textbf{--}}
 
 % removes navigation toolbar from the default position
 \setbeamertemplate{navigation symbols}{}
