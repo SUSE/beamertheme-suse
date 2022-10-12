@@ -30,7 +30,10 @@ As an alternative, put your slide next to [beamerthemesuse.sty](beamerthemesuse.
 If you install from the package, the Poppins and Roboto Mono fonts will be installed. Otherwise you will need to install them yourself:
 
 ```
+# openSUSE Tumbleweed
 $ zypper in google-poppins-fonts google-roboto-mono-fonts
+# openSUSE Leap 15.4
+$ zypper in google-poppins-fonts texlive-roboto
 ```
 
 See the LaTeX source of the included [example](example.tex) to get started.
