@@ -48,6 +48,7 @@
 \setbeamerfont{date}{size=\tiny}
 
 \setbeamertemplate{background}{
+  \ifnum \theframenumber=1
   \begin{tikzpicture}
     \useasboundingbox (0,0) rectangle(\the\paperwidth,\the\paperheight);
     \fill[color=SUSEPine] (0,0) rectangle (\the\paperwidth,\the\paperheight);
@@ -65,11 +66,14 @@
     \draw[dash pattern=on \pgflinewidth off 1pt, color=SUSEFog,ultra thin,rounded corners] (A) -| (B);
     \draw[fill,color=SUSEJungle] (B) circle (3pt);
     \draw[dash pattern=on \pgflinewidth off 1pt, color=SUSEFog,very thin,rounded corners] (B) |- (C);
-
-    \ifnum\thepage>1\relax%
-    \fill[white,opacity=1] (0,0) rectangle(\the\paperwidth,\the\paperheight);
-    \fi
   \end{tikzpicture}
+  \fi
+}
+
+\setbeamertemplate{headline}{
+  \ifnum \theframenumber>1
+  \includegraphics[width=\the\paperwidth]{beamerthemesuse-topbar.eps}
+  \fi
 }
 
 \setbeamertemplate{title page}{
