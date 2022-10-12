@@ -88,21 +88,38 @@
   \vskip0.4\paperheight%
 }
 
-\setbeamertemplate{footline}[text line]{%
+\setbeamertemplate{footline}[text line]{
   \ifnum \theframenumber=1
   \else
   \parbox{\linewidth}{
-    \insertpagenumber
-    \hspace{3em}
-    {\color{SUSEJungle}\rule{4em}{.6pt}}
-    \hspace{2em}
-    Copyright \textcopyright\  SUSE \the\year\hfill
+    \leavevmode
+    \rlap
+    {
+      \includegraphics[width=2.5em]{beamerthemesuse-mini-logo.eps}
+      \hspace{0.5em}
+      Copyright \textcopyright\ SUSE \the\year
+    }
+    \hfill
+    {
+% Uncomment these lines to enable the navigation icons
+%     \insertslidenavigationsymbol
+%     \insertframenavigationsymbol
+%     \insertsubsectionnavigationsymbol
+%     \insertsectionnavigationsymbol
+%     \insertdocnavigationsymbol
+%     \insertbackfindforwardnavigationsymbol
+    }
+    \hfill
+    \llap
+    {
+      \textbf{\insertpagenumber}
+    }
     \vspace*{0.05\paperheight}
   }
   \fi
 }
 
-% removes navigation toolbar
+% removes navigation toolbar from the default position
 \setbeamertemplate{navigation symbols}{}
 
 \mode<all>
