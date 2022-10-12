@@ -27,10 +27,10 @@ You can install the theme system-wide in your Texlive distribution by installing
 
 As an alternative, put your slide next to [beamerthemesuse.sty](beamerthemesuse.sty) and the included assets.
 
-If you install from the package, the WorkSans font will be installed. Otherwise you will need to install it yourself:
+If you install from the package, the Poppins and Roboto Mono fonts will be installed. Otherwise you will need to install them yourself:
 
 ```
-$ zypper in google-worksans-fonts
+$ zypper in google-poppins-font google-roboto-mono-fonts
 ```
 
 See the LaTeX source of the included [example](example.tex) to get started.
