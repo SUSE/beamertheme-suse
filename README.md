@@ -23,9 +23,9 @@ Presentation template for Beamer inspired in the [SUSE Brand](https://brand.suse
 
 # Usage
 
-You can install the theme system-wide in your Texlive distribution by installing [this package](http://software.opensuse.org/download/package?project=home:dmacvicar&package=texlive-beamertheme-suse).
+You can install the theme system-wide in your Texlive distribution by installing <del>[this package](http://software.opensuse.org/download/package?project=home:dmacvicar&package=texlive-beamertheme-suse)</del> (package is obsolete, see the variant below).
 
-As an alternative, put your slide next to [beamerthemesuse.sty](beamerthemesuse.sty) and the included assets.
+As an alternative, put your slide next to [beamerthemesuse.sty](beamerthemesuse.sty) and the included assets (`*.eps` files).
 
 If you install from the package, the Poppins and Roboto Mono fonts will be installed. Otherwise you will need to install them yourself:
 
