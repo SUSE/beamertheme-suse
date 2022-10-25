@@ -1,14 +1,29 @@
-.PHONY: clean
-all: example.pdf
+# add to PROJECTS variable all the projects to compile, without the .tex suffix
+PROJECTS = example
 
-%.pdf : %.tex
-	xelatex -interaction=nonstopmode $<
+BUILDDIR = build
+OUTPUT_IMAGESDIR = $(BUILDDIR)/outputimages
+EXECUTABLES = $(addprefix $(BUILDDIR)/,$(addsuffix .pdf,$(PROJECTS)))
+SCREENSHOTS = $(addprefix $(OUTPUT_IMAGESDIR)/, $(patsubst %,%-screenshot,$(PROJECTS)))
 
-screenshots: example-0.png example-1.png example-2.png
 
-example-0.png: example.pdf
-	gs -dBATCH -dNOPAUSE -dSAFER -r600 -sDEVICE=pngalpha -sOutputFile=example-0.png -dFirstPage=1 -dLastPage=1 $<
+all: executables screenshots
+
+executables: $(EXECUTABLES)
+
+$(BUILDDIR)/%.pdf: %.tex | $(BUILDDIR)
+	xelatex -interaction=nonstopmode -output-directory=$(BUILDDIR) $<
+
+screenshots:	$(SCREENSHOTS)
+
+$(OUTPUT_IMAGESDIR)/%-screenshot: $(BUILDDIR)/%.pdf
+	gs -dBATCH -dNOPAUSE -dSAFER -r600 -sDEVICE=pngalpha -sOutputFile=$(OUTPUT_IMAGESDIR)/$*-%d.png $<
+	touch $@
+
+$(BUILDDIR):
+	mkdir -p $(BUILDDIR) $(OUTPUT_IMAGESDIR)
 
 clean:
-	rm -f *.snm *.out *.toc *.pdf *.aux *.log *.nav *.vrb
+	rm -f $(BUILDDIR)/{*.snm,*.out,*.toc,*.pdf,*.aux,*.log,*.nav,*.vrb} $(OUTPUT_IMAGESDIR)/*
 
+.PHONY: all clean screenshots dir test
