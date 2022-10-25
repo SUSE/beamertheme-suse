@@ -2,7 +2,7 @@
 PROJECTS = example
 
 BUILDDIR = build
-OUTPUT_IMAGESDIR = $(BUILDDIR)/outputimages
+OUTPUT_IMAGESDIR = $(BUILDDIR)/images
 DOCUMENTS = $(addprefix $(BUILDDIR)/,$(addsuffix .pdf,$(PROJECTS)))
 SCREENSHOTS = $(addprefix $(OUTPUT_IMAGESDIR)/, $(patsubst %,%-screenshot,$(PROJECTS)))
 

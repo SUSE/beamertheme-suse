@@ -3,13 +3,13 @@
 
 Presentation template for Beamer inspired in the [SUSE Brand](https://brand.suse.com/) guidelines.
 
-![Screenshot](example-0.png)
+![Screenshot](build/images/example-1.png)
 
-![Screenshot](example-1.png)
+![Screenshot](build/images/example-2.png)
 
-![Screenshot](example-2.png)
+![Screenshot](build/images/example-3.png)
 
-([PDF example](example.pdf))
+([PDF example](build/example.pdf))
 
 # Why beamer?
 
