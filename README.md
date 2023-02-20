@@ -31,9 +31,9 @@ If you install from the package, the Poppins and Roboto Mono fonts will be insta
 
 ```
 # openSUSE Tumbleweed
-$ zypper in google-poppins-fonts google-roboto-mono-fonts
+$ zypper in google-poppins-fonts google-roboto-mono-fonts texlive-textpos texlive-xetex-bin
 # openSUSE Leap 15.4
-$ zypper in google-poppins-fonts texlive-roboto
+$ zypper in google-poppins-fonts texlive-roboto texlive-textpos texlive-xetex-bin
 ```
 
 See the LaTeX source of the included [example](example.tex) to get started.
